@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Readmission Application Form</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fdfcfd;
+    color: #795080;
+    padding: 15px;
+}
+
+.form-container {
+    max-width: 950px;
+    margin: auto;
+    padding: 5px 2px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background design */
+.form-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.18;
+    background:
+        linear-gradient(120deg, transparent 48%, #d9c9d9 49%, transparent 50%),
+        linear-gradient(60deg, transparent 48%, #e1d5e1 49%, transparent 50%);
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    color: #713b77;
+    margin: 12px 0 38px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #805b83;
+}
+
+input,
+select {
+    width: 100%;
+    height: 39px;
+    padding: 8px 10px;
+    border: 2px solid #8b5591;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.85);
+    color: #795080;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+input::placeholder {
+    color: #947e96;
+    opacity: 1;
+}
+
+input:focus,
+select:focus {
+    border-color: #632c70;
+    box-shadow: 0 0 3px #b68abb;
+}
+
+.name-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.address-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 5px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-group > label {
+    margin-bottom: 3px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #795080;
+}
+
+.radio-option input {
+    width: 14px;
+    height: 14px;
+    accent-color: #805080;
+    cursor: pointer;
+}
+
+.radio-option label {
+    margin: 0;
+    cursor: pointer;
+}
+
+select {
+    cursor: pointer;
+}
+
+/* Mobile responsive */
+@media (max-width: 550px) {
+    h1 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .form-row,
+    .name-row,
+    .radio-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h1>Readmission Application Form</h1>
+
+    <form>
+
+        <!-- Student Name -->
+        <div class="form-group" style="margin-bottom:20px;">
+            <label>Student's Name</label>
+
+            <div class="name-row">
+                <input type="text" placeholder="First" required>
+                <input type="text" placeholder="Last" required>
+            </div>
+        </div>
+
+        <!-- Student ID -->
+        <div class="form-group" style="margin-bottom:20px;">
+            <label>Student's ID</label>
+            <input type="text" required>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group" style="margin-bottom:20px;">
+            <label>Date of Birth</label>
+            <input type="date" required>
+        </div>
+
+        <!-- Phone and Email -->
+        <div class="form-row">
+
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" placeholder="### ### ####">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email">
+            </div>
+
+        </div>
+
+        <!-- Address -->
+        <div class="form-group" style="margin-bottom:20px;">
+            <label>Address</label>
+
+            <div class="address-fields">
+
+                <input type="text"
+                       placeholder="Street Address">
+
+                <input type="text"
+                       placeholder="Street Address Line 2">
+
+                <div class="name-row">
+
+                    <input type="text"
+                           placeholder="City">
+
+                    <input type="text"
+                           placeholder="Region">
+
+                </div>
+
+                <div class="name-row">
+
+                    <input type="text"
+                           placeholder="Postal / Zip Code">
+
+                    <select>
+                        <option>Romania</option>
+                        <option>Pakistan</option>
+                        <option>United States</option>
+                        <option>United Kingdom</option>
+                        <option>Canada</option>
+                        <option>Australia</option>
+                        <option>Germany</option>
+                        <option>France</option>
+                        <option>India</option>
+                    </select>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Radio Questions -->
+        <div class="radio-section">
+
+            <div class="radio-group">
+
+                <label>Are you an international student?</label>
+
+                <div class="radio-option">
+                    <input type="radio" id="international-yes"
+                           name="international" value="Yes">
+                    <label for="international-yes">Yes</label>
+                </div>
+
+                <div class="radio-option">
+                    <input type="radio" id="international-no"
+                           name="international" value="No">
+                    <label for="international-no">No</label>
+                </div>
+
+            </div>
+
+            <div class="radio-group">
+
+                <label>Are you Hispanic or Latino?</label>
+
+                <div class="radio-option">
+                    <input type="radio" id="hispanic-yes"
+                           name="hispanic" value="Yes">
+                    <label for="hispanic-yes">Yes</label>
+                </div>
+
+                <div class="radio-option">
+                    <input type="radio" id="hispanic-no"
+                           name="hispanic" value="No">
+                    <label for="hispanic-no">No</label>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+</body>
+</html>
